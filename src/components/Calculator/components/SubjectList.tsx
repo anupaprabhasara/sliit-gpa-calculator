@@ -19,14 +19,20 @@ export const SubjectList: React.FC<SubjectListProps> = ({
   const creditOptions = getCreditOptions();
   const gradeOptions = getGradeOptions();
 
+  const isCustom = mode === 'custom';
+
   return (
     <div className="-mx-4 sm:mx-0 overflow-x-auto">
       <div className="min-w-[320px] px-4 sm:px-0">
-        <div className="grid grid-cols-[1.5fr,70px,70px,40px] sm:grid-cols-[1fr,100px,105px,40px] gap-2 sm:gap-4 mb-3">
+        <div className={`grid ${
+          isCustom 
+            ? 'grid-cols-[1.5fr,70px,70px,40px] sm:grid-cols-[1fr,100px,105px,40px]' 
+            : 'grid-cols-[1.5fr,70px,70px] sm:grid-cols-[1fr,100px,105px]'
+        } gap-2 sm:gap-4 mb-3`}>
           <div className="text-xs ml-1 sm:text-sm font-semibold text-purple-300">Module Name</div>
           <div className="text-xs sm:text-sm font-semibold text-purple-300 text-center">Credits</div>
           <div className="text-xs sm:text-sm font-semibold text-purple-300 text-center">Grade</div>
-          <div></div>
+          {isCustom && <div></div>}
         </div>
 
         <div className="space-y-2 sm:space-y-3">
