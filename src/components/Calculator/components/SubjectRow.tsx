@@ -48,14 +48,17 @@ export const SubjectRow: React.FC<SubjectRowProps> = ({
           className="text-sm w-full min-w-0"
         />
       </div>
-      <button
-        onClick={() => onRemove(subject.id)}
-        className={`transition-colors flex items-center justify-center ${mode === 'custom' ? 'text-red-400 hover:text-red-300' : 'text-gray-600 cursor-not-allowed'}`}
-        disabled={mode !== 'custom'}
-        aria-label="Remove subject"
-      >
-        <MinusCircle className="w-5 h-5 sm:w-6 sm:h-6" />
-      </button>
+      {mode === 'custom' ? (
+        <button
+          onClick={() => onRemove(subject.id)}
+          className="transition-colors flex items-center justify-center text-red-400 hover:text-red-300"
+          aria-label="Remove subject"
+        >
+          <MinusCircle className="w-5 h-5 sm:w-6 sm:h-6" />
+        </button>
+      ) : (
+        <div className="w-5 h-5 sm:w-6 sm:h-6" />
+      )}
     </div>
   );
 };

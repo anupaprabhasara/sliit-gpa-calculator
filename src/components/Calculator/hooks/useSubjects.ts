@@ -11,9 +11,7 @@ export function useSubjects() {
   const switchMode = (newMode: PresetMode) => {
     setMode(newMode);
     
-    if (newMode === 'custom') {
-      setSubjects([{ id: 1, name: '', credits: 3, grade: 'A' }]);
-    } else {
+    if (newMode !== 'custom') {
       const presetSubjects = presets[newMode];
       setSubjects(presetSubjects.map((preset, index) => ({
         id: index + 1,
