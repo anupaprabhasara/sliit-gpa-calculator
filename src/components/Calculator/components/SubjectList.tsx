@@ -23,7 +23,7 @@ export const SubjectList: React.FC<SubjectListProps> = ({
 
   return (
     <div className="-mx-4 sm:mx-0 overflow-x-auto">
-      <div className="min-w-[320px] px-4 sm:px-0">
+      <div className="min-w-[320px] px-4 sm:pl-0 sm:pr-0.5">
         <div className={`grid ${
           isCustom 
             ? 'grid-cols-[1.5fr,70px,70px,40px] sm:grid-cols-[1fr,100px,105px,40px]' 
