@@ -21,8 +21,14 @@ export const SubjectRow: React.FC<SubjectRowProps> = ({
   onUpdate,
   onRemove,
 }) => {
+  const isCustom = mode === 'custom';
+
   return (
-    <div className="pb-0.5 grid grid-cols-[1.5fr,70px,70px,40px] sm:grid-cols-[1fr,100px,100px,40px] gap-2 sm:gap-4 items-center">
+    <div className={`pb-0.5 grid ${
+      isCustom 
+        ? 'grid-cols-[1.5fr,70px,70px,40px] sm:grid-cols-[1fr,100px,100px,40px]' 
+        : 'grid-cols-[1.5fr,70px,70px] sm:grid-cols-[1fr,100px,100px]'
+    } gap-2 sm:gap-4 items-center`}>
       <Input
         type="text"
         placeholder="Module name"
@@ -48,14 +54,15 @@ export const SubjectRow: React.FC<SubjectRowProps> = ({
           className="text-sm w-full min-w-0"
         />
       </div>
-      <button
-        onClick={() => onRemove(subject.id)}
-        className={`transition-colors flex items-center justify-center ${mode === 'custom' ? 'text-red-400 hover:text-red-300' : 'text-gray-600 cursor-not-allowed'}`}
-        disabled={mode !== 'custom'}
-        aria-label="Remove subject"
-      >
-        <MinusCircle className="w-5 h-5 sm:w-6 sm:h-6" />
-      </button>
+      {isCustom && (
+        <button
+          onClick={() => onRemove(subject.id)}
+          className="transition-colors flex items-center justify-center text-red-400 hover:text-red-300"
+          aria-label="Remove subject"
+        >
+          <MinusCircle className="w-5 h-5 sm:w-6 sm:h-6" />
+        </button>
+      )}
     </div>
   );
 };
