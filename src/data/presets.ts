@@ -89,4 +89,16 @@ export const presets: Record<string, PresetSubject[]> = {
     { name: 'PS', credits: 2 },
     { name: 'PAS', credits: 3 },
   ],
+  Y3S1SE: [
+    { name: 'SEP&QM', credits: 4 },
+    { name: 'DS', credits: 4 },
+    { name: 'SA', credits: 4 },
+    { name: 'AF', credits: 4 },
+  ],
+  Y3S2SE: [
+    { name: 'UEE', credits: 3 },
+    { name: 'DS', credits: 4 },
+    { name: 'CSSE', credits: 4 },
+    { name: 'SPM', credits: 3 },
+  ],
 };
