@@ -18,6 +18,8 @@ export const ModeSelector: React.FC<ModeSelectorProps> = ({ currentMode, onModeC
     { key: 'Y1S2', label: 'Up to Y1S2', description: 'New Syllabus' },
     { key: 'Y2S1', label: 'Up to Y2S1', description: 'Old Syllabus' },
     { key: 'Y2S2', label: 'Up to Y2S2', description: 'Old Syllabus' },
+    { key: 'Y3S1SE', label: 'Y3S1 SE', description: 'Old Syllabus' },
+    { key: 'Y3S2SE', label: 'Y3S2 SE', description: 'Old Syllabus' },
   ];
 
   return (
