@@ -1,7 +1,7 @@
 import { grades } from '../../../data/grades';
 
 export const getCreditOptions = () => 
-  Array.from({ length: 6 }, (_, i) => ({
+  Array.from({ length: 16 }, (_, i) => ({
     value: i + 1,
     label: i + 1
   }));
